@@ -1,0 +1,4 @@
+include ./*.txt
+prune docs/*
+include po/*
+include extras/*.py

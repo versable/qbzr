@@ -1,0 +1,402 @@
+<ui version="4.0" >
+ <class>NewWorkingTreeForm</class>
+ <widget class="QWidget" name="NewWorkingTreeForm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>479</width>
+    <height>385</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Create a new Bazaar Working Tree</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="title" >
+      <string>Branch</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout" >
+      <item row="0" column="0" colspan="2" >
+       <widget class="QLabel" name="label_4" >
+        <property name="text" >
+         <string>Branch source (enter a URL or select a local directory with an existing branch)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QComboBox" name="from_location" >
+        <property name="editable" >
+         <bool>true</bool>
+        </property>
+        <property name="sizeAdjustPolicy" >
+         <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QPushButton" name="from_picker" >
+        <property name="text" >
+         <string>Browse...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2" >
+       <widget class="QLabel" name="label" >
+        <property name="font" >
+         <font>
+          <underline>false</underline>
+         </font>
+        </property>
+        <property name="text" >
+         <string>Local directory where the working tree will be created</string>
+        </property>
+        <property name="openExternalLinks" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLineEdit" name="to_location" />
+      </item>
+      <item row="3" column="1" >
+       <widget class="QPushButton" name="to_picker" >
+        <property name="text" >
+         <string>Browse...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3" >
+     <property name="title" >
+      <string>Working Tree Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" >
+      <item row="0" column="0" colspan="2" >
+       <widget class="QRadioButton" name="but_checkout" >
+        <property name="text" >
+         <string>Create a checkout</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <spacer name="horizontalSpacer" >
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QCheckBox" name="but_lightweight" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip" >
+         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-style:italic;">Lightweight checkouts &lt;/span>depend on access to the branch for every operation.&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Normal checkouts can perform common operations like diff and status without such access, and also support local commits.&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+        <property name="text" >
+         <string>Light-weight checkout</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2" >
+       <widget class="QRadioButton" name="but_branch" >
+        <property name="text" >
+         <string>Make a local copy of the branch</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <spacer name="horizontalSpacer_2" >
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>18</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="1" >
+       <widget class="QCheckBox" name="but_stacked" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="toolTip" >
+         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">A &lt;span style=" font-style:italic;">stacked branch&lt;/span> only stores information not in the source branch, and as such, depends on the availability of the source branch&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+        <property name="text" >
+         <string>Create a stacked branch referring to the source branch</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2" >
+       <widget class="QLabel" name="link_help" >
+        <property name="font" >
+         <font>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="cursor" >
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="toolTip" >
+         <string>Click a link for more information about checkouts and branches.</string>
+        </property>
+        <property name="text" >
+         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Tell me more about &lt;a href="bzrtopic:checkouts">&lt;span style=" text-decoration: underline; color:#0000ff;">checkouts&lt;/span>&lt;/a> and &lt;a href="bzrtopic:branches">&lt;span style=" text-decoration: underline; color:#0000ff;">branches&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+        <property name="textFormat" >
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="openExternalLinks" >
+         <bool>false</bool>
+        </property>
+        <property name="textInteractionFlags" >
+         <set>Qt::TextBrowserInteraction</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2" >
+     <property name="title" >
+      <string>Revision</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3" >
+      <item row="0" column="0" colspan="2" >
+       <widget class="QRadioButton" name="but_rev_tip" >
+        <property name="text" >
+         <string>Most recent (tip) revision</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QRadioButton" name="but_rev_specific" >
+        <property name="text" >
+         <string>Revision:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QLineEdit" name="revision" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3" >
+       <widget class="QPushButton" name="but_show_log" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="text" >
+         <string>Show Log...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" >
+       <widget class="QLabel" name="link_help_revisions" >
+        <property name="text" >
+         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a href="bzrtopic:revisionspec">&lt;span style=" text-decoration: underline; color:#0000ff;">About revision identifiers&lt;/span>&lt;/a>&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>link_help</sender>
+   <signal>linkActivated(QString)</signal>
+   <receiver>NewWorkingTreeForm</receiver>
+   <slot>linkActivated(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>101</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>8</x>
+     <y>296</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>link_help_revisions</sender>
+   <signal>linkActivated(QString)</signal>
+   <receiver>NewWorkingTreeForm</receiver>
+   <slot>linkActivated(QString)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>316</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>6</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>but_checkout</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>but_lightweight</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>66</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>88</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>but_branch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>but_stacked</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>58</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>84</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>but_rev_specific</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>revision</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>73</x>
+     <y>350</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>115</x>
+     <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>NewWorkingTreeForm</sender>
+   <signal>disableUi(bool)</signal>
+   <receiver>groupBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>52</x>
+     <y>2</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>71</x>
+     <y>21</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>NewWorkingTreeForm</sender>
+   <signal>disableUi(bool)</signal>
+   <receiver>groupBox_3</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>5</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>24</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>NewWorkingTreeForm</sender>
+   <signal>disableUi(bool)</signal>
+   <receiver>groupBox_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>4</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>61</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>linkActivated(QString)</slot>
+  <signal>disableUi(bool)</signal>
+ </slots>
+</ui>
